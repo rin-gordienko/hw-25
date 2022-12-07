@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
-import Root from './routes/Root';
+import Root from "./routes/Root";
+import Home from "./routes/Home";
+import NotFound from "./routes/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Header />,
+    element: <Root />,
     errorElement: <NotFound />,
     children: [
       {
@@ -28,7 +29,5 @@ const router = createBrowserRouter([
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RouterProvider router={router}/>
-);
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={router} />);

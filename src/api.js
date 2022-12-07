@@ -1,13 +1,13 @@
 const API_URL = "https://dummyjson.com";
 
 export const getUsers = async () => {
-  const response = await fetch(`${API_URL}/products`);
-  const { products } = await response.json();
-  return products;
+  const response = await fetch(`${API_URL}/users`);
+  const { users } = await response.json();
+  return users;
 };
 
 export const getUsersById = async (id) => {
-  const response = await fetch(`${API_URL}/products/${id}`);
-  const data = await response.json();
-  return data;
+  const response = await fetch(`${API_URL}/users/${id}`);
+  const user = await response.json();
+  return user;
 };
