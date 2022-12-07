@@ -32,7 +32,7 @@ const Header = () => {
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
-            to="about"
+            to="sign-up"
           >
             Sign Up
           </NavLink>

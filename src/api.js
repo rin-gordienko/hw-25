@@ -6,7 +6,7 @@ export const getUsers = async () => {
   return users;
 };
 
-export const getUsersById = async (id) => {
+export const getUserById = async (id) => {
   const response = await fetch(`${API_URL}/users/${id}`);
   const user = await response.json();
   return user;

@@ -23,9 +23,15 @@ const User = () => {
     <div>
       <Link to="/users">Back to Users</Link>
       <h3>{user.firstName}</h3>
-      <p>{user.description}</p>
-    </div>
+      <p>{user.lastName}</p>
+      <p>{user.maidenName}</p>
+      <p>{user.age}</p>
+      <p>{user.gender}</p>
+      <p>{user.email}</p>
+      <p>{user.phone}</p>
+      <p>{user.birthDate}</p>
+      </div>
   );
 };
 
-export default Products;
+export default User;

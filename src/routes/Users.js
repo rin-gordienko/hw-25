@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getUsers } from "../api";
+
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getUsers().then((data) => {
@@ -12,6 +14,9 @@ const Users = () => {
       setLoading(false);
     });
   }, []);
+
+  
+
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -26,14 +31,13 @@ const Users = () => {
               <td>{lastName}</td>
               <td>{email}</td>
               <td>{phone}</td>
-              <Link to={`${id}`}>Show more</Link>
+              <td><button onClick={() => navigate(`/users/${id}`)}>Show more</button></td>
             </tr>
-
-
         </table>
       ))}
     </>
   );
 };
 
-export default Users;
+
+export default Users
