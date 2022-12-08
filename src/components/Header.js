@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <nav>
-      <ul>
+      <ul className="menu-list">
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}

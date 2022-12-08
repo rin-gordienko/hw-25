@@ -19,22 +19,37 @@ const Users = () => {
 
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loader">Loading...</p>;
   }
 
   return (
     <>
-      {users.map(({ id, firstName, lastName, email, phone }) => (
-        <table>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>...</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(({ id, firstName, lastName, email, phone }) => (
             <tr>
               <td>{firstName}</td>
               <td>{lastName}</td>
               <td>{email}</td>
               <td>{phone}</td>
-              <td><button onClick={() => navigate(`/users/${id}`)}>Show more</button></td>
+              <td>
+                <button className="button" onClick={() => navigate(`/users/${id}`)}>
+                  Show more
+                </button>
+              </td>
             </tr>
-        </table>
-      ))}
+          ))}
+        </tbody>
+      </table>
     </>
   );
 };

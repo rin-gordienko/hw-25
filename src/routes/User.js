@@ -16,21 +16,67 @@ const User = () => {
   }, [userId]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loader">Loading...</p>;
   }
 
   return (
     <div>
-      <Link to="/users">Back to Users</Link>
-      <h3>{user.firstName}</h3>
-      <p>{user.lastName}</p>
-      <p>{user.maidenName}</p>
-      <p>{user.age}</p>
-      <p>{user.gender}</p>
-      <p>{user.email}</p>
-      <p>{user.phone}</p>
-      <p>{user.birthDate}</p>
-      </div>
+      <Link className="link" to="/users">
+        Back to Users
+      </Link>
+      <table className="user-table">
+        <div className="personal-info">
+          <p className="user-info-title">Contact info</p>
+          <tr>
+            <th>First Name</th>
+            <td>{user.firstName}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{user.lastName}</td>
+          </tr>
+          <tr>
+            <th>Maiden Name</th>
+            <td>{user.maidenName}</td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td>{user.age}</td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>{user.gender}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{user.email}</td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td>{user.phone}</td>
+          </tr>
+          <tr>
+            <th>Birth date</th>
+            <td>{user.birthDate}</td>
+          </tr>
+        </div>
+        <div className="personal-info">
+          <p className="user-info-title">Qualifications</p>
+          <tr>
+            <th>University</th>
+            <td>{user.university}</td>
+          </tr>
+          <tr>
+            <th>Field of work</th>
+            <td>{user.company.department}</td>
+          </tr>
+          <tr>
+            <th>Position</th>
+            <td>{user.company.title}</td>
+          </tr>
+        </div>
+      </table>
+    </div>
   );
 };
 

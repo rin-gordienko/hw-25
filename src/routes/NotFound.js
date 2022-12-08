@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <>
-      <h2>The page doesn't exist</h2>
-      <p>Oops, sth went wrong</p>
+      <h2 className="error-title">The page doesn't exist</h2>
+      <p className="error-text">Oops, sth went wrong</p>
 
-      <Link to="/">Go to Home page</Link>
+      <Link className="link" to="/">Go to Home page</Link>
     </>
   );
 };
