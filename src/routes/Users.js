@@ -15,12 +15,14 @@ const Users = () => {
     });
   }, []);
 
-  
-
 
   if (isLoading) {
     return <p className="loader">Loading...</p>;
   }
+
+  const handleShowMore = (userId) => () => {
+    navigate(`/users/${userId}`);
+  };
 
   return (
     <>
@@ -42,7 +44,7 @@ const Users = () => {
               <td>{email}</td>
               <td>{phone}</td>
               <td>
-                <button className="button" onClick={() => navigate(`/users/${id}`)}>
+                <button className="button" type="submit" onClick={handleShowMore(id)}>
                   Show more
                 </button>
               </td>
